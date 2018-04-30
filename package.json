@@ -1,0 +1,66 @@
+{
+  "name": "@bthesorceror/location-tweets",
+  "version": "1.0.0",
+  "description": "location-tweets",
+  "license": "MIT",
+  "repository": "",
+  "author": {
+    "name": "Brandon Farmer",
+    "email": "bthesorceror@gmail.com"
+  },
+  "bin": {
+    "location-tweets": "bin/index.js"
+  },
+  "keywords": [""],
+  "files": ["lib"],
+  "main": "lib/main.js",
+  "typings": "lib/main.d.ts",
+  "scripts": {
+    "clean": "rimraf lib && rimraf coverage",
+    "format":
+      "prettier --write \"{src,__tests__}/**/*.ts\" --single-quote --trailing-comma es5",
+    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
+    "prepublishOnly": "npm run build",
+    "prebuild":
+      "npm run clean && npm run format && npm run lint && echo Using TypeScript && tsc --version",
+    "build": "tsc --pretty",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "watch": "npm run build -- --watch",
+    "watch:test": "jest --watch"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "commander": "^2.15.1",
+    "html-entities": "^1.2.1",
+    "influx": "^5.0.7",
+    "sentiment": "^5.0.0",
+    "twit": "^2.2.9"
+  },
+  "devDependencies": {
+    "@types/html-entities": "^1.2.16",
+    "@types/jest": "^22.0.1",
+    "@types/node": "^8.0.0",
+    "@types/twit": "^2.2.12",
+    "coveralls": "^2.0.0",
+    "jest": "^22.0.4",
+    "prettier": "^1.5.2",
+    "rimraf": "^2.0.0",
+    "ts-jest": "^22.0.1",
+    "ts-node": "^3.2.0",
+    "tslint": "^5.0.0",
+    "tslint-config-prettier": "^1.1.0",
+    "typescript": "^2.3.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "jest": {
+    "transform": {
+      ".(ts)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|js)$",
+    "moduleFileExtensions": ["ts", "js"],
+    "testEnvironment": "node"
+  }
+}
