@@ -1,1 +1,1 @@
-declare module "sentiment";
+declare module 'sentiment';

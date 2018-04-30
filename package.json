@@ -1,6 +1,6 @@
 {
   "name": "@bthesorceror/location-tweets",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "location-tweets",
   "license": "MIT",
   "repository": "",
@@ -12,8 +12,8 @@
     "location-tweets": "bin/index.js"
   },
   "keywords": [""],
-  "files": ["lib"],
-  "main": "lib/main.js",
+  "files": ["lib", "bin"],
+  "main": "bin",
   "typings": "lib/main.d.ts",
   "scripts": {
     "clean": "rimraf lib && rimraf coverage",
